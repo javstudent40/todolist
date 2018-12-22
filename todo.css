@@ -1,0 +1,20 @@
+body {
+	background: #999966;
+	font-family: 'Old Standard TT', serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+
+
+.input-label {
+	font-size: 1.5em;
+	padding-bottom: 5px;
+}
+
+#task {
+	margin-bottom: 10px;
+}
+
