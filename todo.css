@@ -18,3 +18,8 @@ h1 {
 	margin-bottom: 10px;
 }
 
+.list-properties {
+	font-size: 2.5em;
+	color: red;
+	font-family: Helvetica;
+}
