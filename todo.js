@@ -1,12 +1,14 @@
 const form = document.querySelector('#todo-form');
 const uList = document.querySelector('.ul-list');
 const listInput = document.querySelector('#task');
+const clearButton = document.querySelector('.clr-btn');
 
 
 loadEventListeners();
 
 function loadEventListeners() {
 	form.addEventListener('submit', addTask);
+	clearButton.addEventListener('click', clearTasks);
 }
 
 
@@ -19,5 +21,9 @@ function addTask(e) {
 	listInput.value = '';
 
 	e.preventDefault();
+}
+
+function clearTasks() {
+	uList.innerHTML = '';
 }
 
