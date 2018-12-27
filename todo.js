@@ -2,6 +2,9 @@ const form = document.querySelector('#todo-form');
 const uList = document.querySelector('.ul-list');
 const listInput = document.querySelector('#task');
 const clearButton = document.querySelector('.clr-btn');
+const complete = document.querySelector('#complete');
+
+complete.value = 0;
 
 
 loadEventListeners();
@@ -18,7 +21,9 @@ function addTask(e) {
 	li.className = 'list-properties';
 	li.appendChild(document.createTextNode(listInput.value));
 	uList.appendChild(li);
+	complete.value ++;
 	listInput.value = '';
+
 
 	e.preventDefault();
 }
