@@ -7,11 +7,13 @@ const complete = document.querySelector('#complete');
 complete.value = 0;
 
 
+
 loadEventListeners();
 
 function loadEventListeners() {
 	form.addEventListener('submit', addTask);
 	clearButton.addEventListener('click', clearTasks);
+	uList.addEventListener('click', deleteTask);
 }
 
 
@@ -19,7 +21,7 @@ function loadEventListeners() {
 function addTask(e) {
 	const li = document.createElement('li');
 	li.className = 'list-properties';
-	li.appendChild(document.createTextNode(listInput.value));
+	li.appendChild(document.createTextNode(listInput.value));	
 	uList.appendChild(li);
 	complete.value ++;
 	listInput.value = '';
@@ -30,5 +32,10 @@ function addTask(e) {
 
 function clearTasks() {
 	uList.innerHTML = '';
+	complete.value = 0;
+}
+
+function deleteTask(e) {
+	
 }
 
