@@ -21,7 +21,11 @@ function loadEventListeners() {
 function addTask(e) {
 	const li = document.createElement('li');
 	li.className = 'list-properties';
-	li.appendChild(document.createTextNode(listInput.value));	
+	li.appendChild(document.createTextNode(listInput.value));
+	const icon = document.createElement('button');
+	icon.className = 'del-btn'
+	icon.innerHTML = '<button type="button" class="btn btn-outline-primary">Delete</button>'
+	li.appendChild(icon);
 	uList.appendChild(li);
 	complete.value ++;
 	listInput.value = '';

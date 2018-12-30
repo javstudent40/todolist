@@ -22,8 +22,14 @@ h1 {
 	font-size: 2.5em;
 	color: red;
 	font-family: Helvetica;
+	margin: 10px;
 }
 
 .clr-btn {
 	margin-bottom: 15px;
+}
+
+.del-btn {
+	margin-left: 25px;
+
 }
