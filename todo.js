@@ -40,6 +40,10 @@ function clearTasks() {
 }
 
 function deleteTask(e) {
-	
+	if(e.target.parentElement.classList.contains('del-btn')) {
+		e.target.parentElement.parentElement.remove();
+	}
+
+	complete.value --;
 }
 
