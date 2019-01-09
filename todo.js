@@ -1,9 +1,12 @@
+
+//UI Variables
 const form = document.querySelector('#todo-form');
 const uList = document.querySelector('.ul-list');
 const listInput = document.querySelector('#task');
 const clearButton = document.querySelector('.clr-btn');
 const complete = document.querySelector('#complete');
 
+//Value for "tasks completed input field"
 complete.value = 0;
 
 
@@ -20,23 +23,35 @@ function loadEventListeners() {
 
 
 function addTask(e) {
+	//Create li element
 	const li = document.createElement('li');
+	//Applies css to li element from 'list-properties'
 	li.className = 'list-properties';
+	//Creates text content for list element
 	li.appendChild(document.createTextNode(listInput.value));
+	// Creates button element
 	const icon = document.createElement('button');
+	//Applies bootstrap css to button
 	icon.className = 'del-btn'
+	//Styles button and adds "Delete" inside
 	icon.innerHTML = '<button type="button" class="btn btn-outline-primary">Delete</button>'
+	//Button appended to list element
 	li.appendChild(icon);
+	//Appends li element to unordered list
 	uList.appendChild(li);
 
+	//Calls function to persist data to local storage
 	storeInLocalStorage(listInput.value);
+	//Increments tasks competed value each time task is added
 	complete.value ++;
+	//Clears input field for new task
 	listInput.value = '';
 
 
 	e.preventDefault();
 }
 
+//Create function to persist added tasks to local storage
 function storeInLocalStorage(task) {
 	let tasks;
 	if(localStorage.getItem('tasks') === null) {
